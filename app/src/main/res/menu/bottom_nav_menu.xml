@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_crops"
+        android:title="Your crops"
+        android:icon="@mipmap/ic_launcher" />
+    <item
+        android:id="@+id/nav_community"
+        android:title="Community"
+        android:icon="@mipmap/ic_launcher" />
+    <item
+        android:id="@+id/nav_market"
+        android:title="Market"
+        android:icon="@mipmap/ic_launcher" />
+    <item
+        android:id="@+id/nav_you"
+        android:title="You"
+        android:icon="@mipmap/ic_launcher_round" />
+</menu>
+
+
