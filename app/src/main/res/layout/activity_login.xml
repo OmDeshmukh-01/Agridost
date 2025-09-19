@@ -20,17 +20,9 @@
             android:id="@+id/app_logo"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:src="@drawable/logob" />
 
-        <TextView
-            android:id="@+id/app_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="AgriDost"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        
     </LinearLayout>
 
     <TextView
