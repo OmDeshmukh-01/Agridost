@@ -3,19 +3,19 @@
     <item
         android:id="@+id/nav_crops"
         android:title="Your crops"
-        android:icon="@mipmap/ic_launcher" />
+        android:icon="@drawable/ic_crops" />
     <item
         android:id="@+id/nav_community"
         android:title="Community"
-        android:icon="@mipmap/ic_launcher" />
+        android:icon="@drawable/ic_community" />
     <item
         android:id="@+id/nav_market"
         android:title="Market"
-        android:icon="@mipmap/ic_launcher" />
+        android:icon="@drawable/ic_market" />
     <item
         android:id="@+id/nav_you"
         android:title="You"
-        android:icon="@mipmap/ic_launcher_round" />
+        android:icon="@drawable/ic_user_avatar" />
 </menu>
 
 
