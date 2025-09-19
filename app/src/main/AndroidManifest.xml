@@ -23,10 +23,14 @@
             android:exported="true" />
         <activity
             android:name=".CommunityActivity"
+  
+            android:exported="false" />
+
             android:exported="true" />
         <activity
             android:name=".AskCommunityActivity"
             android:exported="true" />
+
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
