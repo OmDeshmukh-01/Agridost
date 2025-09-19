@@ -1,42 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/welcome_root"
+    android:id="@+id/act_wel_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
 
-
-    <!-- Get Started button -->
-
     <ImageView
-        android:id="@+id/bg_image"
+        android:id="@+id/act_wel_bg_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/punjabbaground" />
 
+
+    <ImageView
+        android:id="@+id/act_wel_logo_image"
+        android:layout_width="match_parent"
+        android:layout_height="304dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/logob" />
+
+    <TextView
+        android:id="@+id/act_wel_welcome_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/act_wel_button_get_started"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="107dp"
+        android:shadowColor="#66000000"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="Welcome to Smart Farming"
+        android:textColor="@android:color/white"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/act_wel_sample_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_wel_welcome_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="-100dp"
+        android:text="Where tradition meets innovation\nClick | Connect | Cultivate"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:shadowColor="#66000000"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="8" />
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_get_started"
+        android:id="@+id/act_wel_button_get_started"
         style="@style/Widget.Material3.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:layout_gravity="bottom"
         android:text="Get started"
         android:backgroundTint="#7BB83F"
         android:textAllCaps="false"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="304dp"
-        app:srcCompat="@drawable/logob" />
-
-</FrameLayout>
+</RelativeLayout>
 
 
