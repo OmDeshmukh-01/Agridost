@@ -1,0 +1,64 @@
+{
+  "states": [
+    {
+      "id": "andhra_pradesh",
+      "name": "Andhra Pradesh",
+      "code": "AP",
+      "aliases": ["AP", "Andhra Pradesh", "andhra pradesh", "ANDHRA PRADESH"]
+    },
+    {
+      "id": "maharashtra",
+      "name": "Maharashtra",
+      "code": "MH",
+      "aliases": ["MH", "Maharashtra", "maharashtra", "MAHARASHTRA"]
+    },
+    {
+      "id": "punjab",
+      "name": "Punjab",
+      "code": "PB",
+      "aliases": ["PB", "Punjab", "punjab", "PUNJAB"]
+    },
+    {
+      "id": "gujarat",
+      "name": "Gujarat",
+      "code": "GJ",
+      "aliases": ["GJ", "Gujarat", "gujarat", "GUJARAT"]
+    },
+    {
+      "id": "karnataka",
+      "name": "Karnataka",
+      "code": "KA",
+      "aliases": ["KA", "Karnataka", "karnataka", "KARNATAKA"]
+    },
+    {
+      "id": "tamil_nadu",
+      "name": "Tamil Nadu",
+      "code": "TN",
+      "aliases": ["TN", "Tamil Nadu", "tamil nadu", "TAMIL NADU"]
+    },
+    {
+      "id": "west_bengal",
+      "name": "West Bengal",
+      "code": "WB",
+      "aliases": ["WB", "West Bengal", "west bengal", "WEST BENGAL"]
+    },
+    {
+      "id": "uttar_pradesh",
+      "name": "Uttar Pradesh",
+      "code": "UP",
+      "aliases": ["UP", "Uttar Pradesh", "uttar pradesh", "UTTAR PRADESH"]
+    },
+    {
+      "id": "rajasthan",
+      "name": "Rajasthan",
+      "code": "RJ",
+      "aliases": ["RJ", "Rajasthan", "rajasthan", "RAJASTHAN"]
+    },
+    {
+      "id": "haryana",
+      "name": "Haryana",
+      "code": "HR",
+      "aliases": ["HR", "Haryana", "haryana", "HARYANA"]
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+package com.example.dummy;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.tabs.TabLayout;
+
+import java.io.File;
+
+public class ProfileActivity extends AppCompatActivity {
+
+    private static final int EDIT_PROFILE_REQUEST = 100;
+    
+    private TextView profileName;
+    private TextView profileDescription;
+    private MaterialButton editButton;
+    private TabLayout profileTabs;
+    private MaterialCardView shareCard;
+    private MaterialCardView feedbackCard;
+    private BottomNavigationView bottomNavigationView;
+    private ImageView profileAvatar;
+    private ImageView menuButton;
+    
+    private User currentUser;
+    private UserDatabase userDatabase;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile);
+
+        initializeViews();
+        setupProfileInfo();
+        setupTabs();
+        setupCards();
+        setupBottomNavigation();
+    }
+
+    private void initializeViews() {
+        profileName = findViewById(R.id.profile_name);
+        profileDescription = findViewById(R.id.profile_description);
+        editButton = findViewById(R.id.profile_edit_button);
+        profileTabs = findViewById(R.id.profile_tabs);
+        shareCard = findViewById(R.id.share_card);
+        feedbackCard = findViewById(R.id.feedback_card);
+        bottomNavigationView = findViewById(R.id.profile_bottom_nav);
+        profileAvatar = findViewById(R.id.profile_avatar);
+        menuButton = findViewById(R.id.profile_menu_button);
+        
+        userDatabase = UserDatabase.getInstance(this);
+    }
+
+    private void setupProfileInfo() {
+        // Load current user
+        currentUser = userDatabase.getCurrentUser();
+        
+        if (currentUser != null) {
+            // Display current user information
+            profileName.setText(currentUser.getDisplayName());
+            profileDescription.setText(currentUser.getDisplayDescription());
+            
+            // Load avatar if exists
+            if (currentUser.hasAvatar()) {
+                loadAvatar(currentUser.getAvatarPath());
+            }
+        } else {
+            // Default values if no user is logged in
+            profileName.setText("Guest User");
+            profileDescription.setText("Please log in to customize your profile");
+        }
+        
+        editButton.setOnClickListener(v -> {
+            if (currentUser != null) {
+                Intent intent = new Intent(this, EditProfileActivity.class);
+                startActivityForResult(intent, EDIT_PROFILE_REQUEST);
+            } else {
+                Toast.makeText(this, "Please log in to edit your profile", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
+        // Setup menu button
+        menuButton.setOnClickListener(v -> showMenuDialog());
+    }
+    
+    private void loadAvatar(String imagePath) {
+        try {
+            File imageFile = new File(imagePath);
+            if (imageFile.exists()) {
+                Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
+                profileAvatar.setImageBitmap(bitmap);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void showMenuDialog() {
+        String[] menuItems = {"Settings", "Help & Support", "About AgriDost", "Logout"};
+        
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Menu");
+        builder.setItems(menuItems, (dialog, which) -> {
+            switch (which) {
+                case 0:
+                    showSettings();
+                    break;
+                case 1:
+                    showHelpSupport();
+                    break;
+                case 2:
+                    showAbout();
+                    break;
+                case 3:
+                    logout();
+                    break;
+            }
+        });
+        builder.show();
+    }
+    
+    private void showSettings() {
+        Toast.makeText(this, "Settings feature coming soon!", Toast.LENGTH_SHORT).show();
+    }
+    
+    private void showHelpSupport() {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setData(Uri.parse("mailto:support@agridost.com"));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "AgriDost Support Request");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi AgriDost Support Team,\n\nI need help with:\n\n");
+        
+        if (emailIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(emailIntent);
+        } else {
+            Toast.makeText(this, "No email app found. Please contact us at support@agridost.com", Toast.LENGTH_LONG).show();
+        }
+    }
+    
+    private void showAbout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("About AgriDost");
+        builder.setMessage("AgriDost v1.0\n\nYour agricultural assistant for crop management, plant disease identification, and farming advice.\n\nDeveloped with ❤️ for farmers worldwide.");
+        builder.setPositiveButton("OK", null);
+        builder.show();
+    }
+    
+    private void logout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Logout");
+        builder.setMessage("Are you sure you want to logout?");
+        builder.setPositiveButton("Logout", (dialog, which) -> {
+            userDatabase.logout();
+            Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+            // Navigate to login screen
+            Intent intent = new Intent(this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        });
+        builder.setNegativeButton("Cancel", null);
+        builder.show();
+    }
+
+    private void setupTabs() {
+        // Add tabs
+        profileTabs.addTab(profileTabs.newTab().setText("General"));
+        profileTabs.addTab(profileTabs.newTab().setText("Community"));
+        
+        // Set default selection
+        profileTabs.selectTab(profileTabs.getTabAt(0));
+        
+        // Handle tab selection
+        profileTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+                if (position == 0) {
+                    // Show General content
+                    shareCard.setVisibility(View.VISIBLE);
+                    feedbackCard.setVisibility(View.VISIBLE);
+                } else if (position == 1) {
+                    // Show Community content (for now, hide general cards)
+                    shareCard.setVisibility(View.GONE);
+                    feedbackCard.setVisibility(View.GONE);
+                    Toast.makeText(ProfileActivity.this, "Community features coming soon!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
+    }
+
+    private void setupCards() {
+        // Share AgriDost card
+        MaterialButton shareButton = findViewById(R.id.share_button);
+        shareButton.setOnClickListener(v -> shareAgriDost());
+
+        // Feedback card
+        MaterialButton feedbackButton = findViewById(R.id.feedback_button);
+        feedbackButton.setOnClickListener(v -> giveFeedback());
+    }
+
+    private void shareAgriDost() {
+        String shareText = "Check out AgriDost - Your agricultural assistant! " +
+                "Get expert advice on farming, crop management, plant diseases, and more. " +
+                "Download now and grow smart together! 🌱";
+        
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "AgriDost - Agricultural Assistant");
+        
+        startActivity(Intent.createChooser(shareIntent, "Share AgriDost"));
+    }
+
+    private void giveFeedback() {
+        // Open email client for feedback
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setData(Uri.parse("mailto:feedback@agridost.com"));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "AgriDost App Feedback");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi AgriDost Team,\n\nI would like to share my feedback about the app:\n\n");
+        
+        if (emailIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(emailIntent);
+        } else {
+            Toast.makeText(this, "No email app found. Please contact us at feedback@agridost.com", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void setupBottomNavigation() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                
+                if (itemId == R.id.nav_crops) {
+                    Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                } else if (itemId == R.id.nav_community) {
+                    Intent intent = new Intent(ProfileActivity.this, CommunityActivity.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                } else if (itemId == R.id.nav_market) {
+                    Intent intent = new Intent(ProfileActivity.this, MarketActivity.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                } else if (itemId == R.id.nav_you) {
+                    // Already on profile page
+                    return true;
+                }
+                
+                return false;
+            }
+        });
+        
+        // Set Profile as selected
+        bottomNavigationView.setSelectedItemId(R.id.nav_you);
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        
+        if (requestCode == EDIT_PROFILE_REQUEST && resultCode == Activity.RESULT_OK) {
+            // Profile was updated, refresh the display
+            setupProfileInfo();
+            Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Refresh profile info when returning to this activity
+        setupProfileInfo();
+    }
+    
+    @Override
+    public void onBackPressed() {
+        // Navigate to home page instead of welcome page
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+}

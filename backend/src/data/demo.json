@@ -1,0 +1,160 @@
+{
+  "states": [
+    {
+      "id": "maharashtra",
+      "name": "Maharashtra",
+      "code": "MH"
+    },
+    {
+      "id": "punjab",
+      "name": "Punjab",
+      "code": "PB"
+    },
+    {
+      "id": "gujarat",
+      "name": "Gujarat",
+      "code": "GJ"
+    }
+  ],
+  "crops": {
+    "maharashtra": [
+      {
+        "id": "tomato",
+        "name": "Tomato",
+        "category": "vegetables"
+      },
+      {
+        "id": "onion",
+        "name": "Onion",
+        "category": "vegetables"
+      },
+      {
+        "id": "rice",
+        "name": "Rice",
+        "category": "cereals"
+      },
+      {
+        "id": "sugarcane",
+        "name": "Sugarcane",
+        "category": "cash_crops"
+      }
+    ],
+    "punjab": [
+      {
+        "id": "wheat",
+        "name": "Wheat",
+        "category": "cereals"
+      },
+      {
+        "id": "rice",
+        "name": "Rice",
+        "category": "cereals"
+      },
+      {
+        "id": "maize",
+        "name": "Maize",
+        "category": "cereals"
+      },
+      {
+        "id": "cotton",
+        "name": "Cotton",
+        "category": "cash_crops"
+      }
+    ],
+    "gujarat": [
+      {
+        "id": "groundnut",
+        "name": "Groundnut",
+        "category": "oilseeds"
+      },
+      {
+        "id": "cotton",
+        "name": "Cotton",
+        "category": "cash_crops"
+      },
+      {
+        "id": "wheat",
+        "name": "Wheat",
+        "category": "cereals"
+      }
+    ]
+  },
+  "prices": {
+    "local": {
+      "maharashtra_tomato": {
+        "state": "Maharashtra",
+        "crop": "Tomato",
+        "min": 12.5,
+        "modal": 14.0,
+        "max": 18.0,
+        "unit": "kg",
+        "lastUpdated": 1690000000000,
+        "history": [
+          { "date": "2024-01-01", "modal": 13.5 },
+          { "date": "2024-01-02", "modal": 14.2 },
+          { "date": "2024-01-03", "modal": 13.8 },
+          { "date": "2024-01-04", "modal": 14.0 },
+          { "date": "2024-01-05", "modal": 14.5 }
+        ]
+      },
+      "maharashtra_onion": {
+        "state": "Maharashtra",
+        "crop": "Onion",
+        "min": 8.0,
+        "modal": 10.5,
+        "max": 15.0,
+        "unit": "kg",
+        "lastUpdated": 1690000000000,
+        "history": [
+          { "date": "2024-01-01", "modal": 9.5 },
+          { "date": "2024-01-02", "modal": 10.0 },
+          { "date": "2024-01-03", "modal": 10.2 },
+          { "date": "2024-01-04", "modal": 10.5 },
+          { "date": "2024-01-05", "modal": 11.0 }
+        ]
+      },
+      "punjab_wheat": {
+        "state": "Punjab",
+        "crop": "Wheat",
+        "min": 20.0,
+        "modal": 22.5,
+        "max": 25.0,
+        "unit": "kg",
+        "lastUpdated": 1690000000000,
+        "history": [
+          { "date": "2024-01-01", "modal": 21.0 },
+          { "date": "2024-01-02", "modal": 21.5 },
+          { "date": "2024-01-03", "modal": 22.0 },
+          { "date": "2024-01-04", "modal": 22.5 },
+          { "date": "2024-01-05", "modal": 23.0 }
+        ]
+      }
+    },
+    "government": {
+      "tomato": {
+        "crop": "Tomato",
+        "msp": 12.0,
+        "unit": "kg",
+        "lastUpdated": 1690000000000
+      },
+      "onion": {
+        "crop": "Onion",
+        "msp": 8.5,
+        "unit": "kg",
+        "lastUpdated": 1690000000000
+      },
+      "wheat": {
+        "crop": "Wheat",
+        "msp": 20.0,
+        "unit": "kg",
+        "lastUpdated": 1690000000000
+      },
+      "rice": {
+        "crop": "Rice",
+        "msp": 18.0,
+        "unit": "kg",
+        "lastUpdated": 1690000000000
+      }
+    }
+  }
+}

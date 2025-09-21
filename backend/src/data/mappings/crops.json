@@ -1,0 +1,184 @@
+{
+  "crops": [
+    {
+      "id": "tomato",
+      "name": "Tomato",
+      "category": "vegetables",
+      "aliases": ["tomato", "Tomato", "TOMATO", "tamatar", "Tamatar"],
+      "enam_id": "TOMATO",
+      "agmark_id": "TOMATO",
+      "datagov_id": "tomato"
+    },
+    {
+      "id": "onion",
+      "name": "Onion",
+      "category": "vegetables",
+      "aliases": ["onion", "Onion", "ONION", "pyaz", "Pyaz", "kanda", "Kanda"],
+      "enam_id": "ONION",
+      "agmark_id": "ONION",
+      "datagov_id": "onion"
+    },
+    {
+      "id": "potato",
+      "name": "Potato",
+      "category": "vegetables",
+      "aliases": ["potato", "Potato", "POTATO", "aloo", "Aloo"],
+      "enam_id": "POTATO",
+      "agmark_id": "POTATO",
+      "datagov_id": "potato"
+    },
+    {
+      "id": "rice",
+      "name": "Rice",
+      "category": "cereals",
+      "aliases": ["rice", "Rice", "RICE", "chawal", "Chawal", "paddy", "Paddy"],
+      "enam_id": "RICE",
+      "agmark_id": "RICE",
+      "datagov_id": "rice"
+    },
+    {
+      "id": "wheat",
+      "name": "Wheat",
+      "category": "cereals",
+      "aliases": ["wheat", "Wheat", "WHEAT", "gehun", "Gehun"],
+      "enam_id": "WHEAT",
+      "agmark_id": "WHEAT",
+      "datagov_id": "wheat"
+    },
+    {
+      "id": "maize",
+      "name": "Maize",
+      "category": "cereals",
+      "aliases": ["maize", "Maize", "MAIZE", "makka", "Makka", "corn", "Corn"],
+      "enam_id": "MAIZE",
+      "agmark_id": "MAIZE",
+      "datagov_id": "maize"
+    },
+    {
+      "id": "sugarcane",
+      "name": "Sugarcane",
+      "category": "cash_crops",
+      "aliases": ["sugarcane", "Sugarcane", "SUGARCANE", "ganna", "Ganna"],
+      "enam_id": "SUGARCANE",
+      "agmark_id": "SUGARCANE",
+      "datagov_id": "sugarcane"
+    },
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "category": "cash_crops",
+      "aliases": ["cotton", "Cotton", "COTTON", "kapas", "Kapas"],
+      "enam_id": "COTTON",
+      "agmark_id": "COTTON",
+      "datagov_id": "cotton"
+    },
+    {
+      "id": "soybean",
+      "name": "Soybean",
+      "category": "oilseeds",
+      "aliases": ["soybean", "Soybean", "SOYBEAN", "soya", "Soya"],
+      "enam_id": "SOYBEAN",
+      "agmark_id": "SOYBEAN",
+      "datagov_id": "soybean"
+    },
+    {
+      "id": "groundnut",
+      "name": "Groundnut",
+      "category": "oilseeds",
+      "aliases": ["groundnut", "Groundnut", "GROUNDNUT", "mungfali", "Mungfali"],
+      "enam_id": "GROUNDNUT",
+      "agmark_id": "GROUNDNUT",
+      "datagov_id": "groundnut"
+    },
+    {
+      "id": "mustard",
+      "name": "Mustard",
+      "category": "oilseeds",
+      "aliases": ["mustard", "Mustard", "MUSTARD", "sarson", "Sarson"],
+      "enam_id": "MUSTARD",
+      "agmark_id": "MUSTARD",
+      "datagov_id": "mustard"
+    },
+    {
+      "id": "chickpea",
+      "name": "Chickpea",
+      "category": "pulses",
+      "aliases": ["chickpea", "Chickpea", "CHICKPEA", "chana", "Chana", "gram", "Gram"],
+      "enam_id": "CHICKPEA",
+      "agmark_id": "CHICKPEA",
+      "datagov_id": "chickpea"
+    },
+    {
+      "id": "lentil",
+      "name": "Lentil",
+      "category": "pulses",
+      "aliases": ["lentil", "Lentil", "LENTIL", "masoor", "Masoor"],
+      "enam_id": "LENTIL",
+      "agmark_id": "LENTIL",
+      "datagov_id": "lentil"
+    },
+    {
+      "id": "mung_bean",
+      "name": "Mung Bean",
+      "category": "pulses",
+      "aliases": ["mung bean", "Mung Bean", "MUNG BEAN", "moong", "Moong"],
+      "enam_id": "MUNG_BEAN",
+      "agmark_id": "MUNG_BEAN",
+      "datagov_id": "mung_bean"
+    },
+    {
+      "id": "turmeric",
+      "name": "Turmeric",
+      "category": "spices",
+      "aliases": ["turmeric", "Turmeric", "TURMERIC", "haldi", "Haldi"],
+      "enam_id": "TURMERIC",
+      "agmark_id": "TURMERIC",
+      "datagov_id": "turmeric"
+    },
+    {
+      "id": "chili",
+      "name": "Chili",
+      "category": "spices",
+      "aliases": ["chili", "Chili", "CHILI", "mirchi", "Mirchi", "red chili", "Red Chili"],
+      "enam_id": "CHILI",
+      "agmark_id": "CHILI",
+      "datagov_id": "chili"
+    },
+    {
+      "id": "ginger",
+      "name": "Ginger",
+      "category": "spices",
+      "aliases": ["ginger", "Ginger", "GINGER", "adrak", "Adrak"],
+      "enam_id": "GINGER",
+      "agmark_id": "GINGER",
+      "datagov_id": "ginger"
+    },
+    {
+      "id": "garlic",
+      "name": "Garlic",
+      "category": "spices",
+      "aliases": ["garlic", "Garlic", "GARLIC", "lahsun", "Lahsun"],
+      "enam_id": "GARLIC",
+      "agmark_id": "GARLIC",
+      "datagov_id": "garlic"
+    },
+    {
+      "id": "coriander",
+      "name": "Coriander",
+      "category": "spices",
+      "aliases": ["coriander", "Coriander", "CORIANDER", "dhaniya", "Dhaniya"],
+      "enam_id": "CORIANDER",
+      "agmark_id": "CORIANDER",
+      "datagov_id": "coriander"
+    },
+    {
+      "id": "cumin",
+      "name": "Cumin",
+      "category": "spices",
+      "aliases": ["cumin", "Cumin", "CUMIN", "jeera", "Jeera"],
+      "enam_id": "CUMIN",
+      "agmark_id": "CUMIN",
+      "datagov_id": "cumin"
+    }
+  ]
+}

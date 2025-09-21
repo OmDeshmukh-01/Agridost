@@ -10,29 +10,6 @@
     android:padding="24dp"
     tools:context=".SignupActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end|center_vertical">
-
-        <ImageView
-            android:id="@+id/app_logo"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@mipmap/ic_launcher_round" />
-
-        <TextView
-            android:id="@+id/app_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="AgriDost"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
     <TextView
         android:id="@+id/signup_title"
         android:layout_width="wrap_content"
@@ -48,14 +25,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Keep your plants alive by watering, providing sunlight,\nand checking for pests."
-        android:textColor="@android:color/darker_gray"
+        android:text="Create your AgriDost account to get started with farming assistance."
+        android:textColor="@android:color/black"
         android:textSize="14sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusTopStart="28dp"
+        app:boxCornerRadiusTopEnd="28dp"
+        app:boxCornerRadiusBottomStart="28dp"
+        app:boxCornerRadiusBottomEnd="28dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your full name"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         app:boxCornerRadiusTopStart="28dp"
         app:boxCornerRadiusTopEnd="28dp"
@@ -112,7 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Continue"
+        android:text="Create Account"
         android:backgroundTint="#7BB83F"
         android:textAllCaps="false"
         android:textStyle="bold" />
@@ -123,10 +118,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
-        android:text="Don’t have an account? Sign up"
+        android:text="Already have an account? Log in"
         android:textColor="@android:color/black"
         android:textSize="14sp" />
 
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:visibility="gone" />
+
 </LinearLayout>
-
-

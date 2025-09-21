@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - REDIS_URL=redis://redis:6379
+      - DEMO_MODE=false
+    depends_on:
+      - redis
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  scheduler:
+    build: .
+    command: node src/scheduler.js
+    environment:
+      - NODE_ENV=production
+      - REDIS_URL=redis://redis:6379
+      - DEMO_MODE=false
+    depends_on:
+      - redis
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    restart: unless-stopped
+
+volumes:
+  redis_data:

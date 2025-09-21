@@ -53,15 +53,23 @@ public class LoginActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         loginButton.setEnabled(false);
 
-        // Stubbed auth success. Replace with real auth.
+        // Authenticate with UserDatabase
+        UserDatabase userDatabase = UserDatabase.getInstance(this);
+        User user = userDatabase.login(email, password);
+        
         emailInput.postDelayed(() -> {
             progressBar.setVisibility(View.GONE);
             loginButton.setEnabled(true);
-            Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
+            
+            if (user != null) {
+                Toast.makeText(this, "Login successful! Welcome " + user.getName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+            }
         }, 800);
     }
 }
