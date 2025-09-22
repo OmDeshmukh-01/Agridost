@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -315,6 +316,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         filterState.setOnClickListener(v -> showStateFilterDialog());
         filterType.setOnClickListener(v -> showTypeFilterDialog());
     }
+
+    
     
     private void showStateFilterDialog() {
         String[] states = FarmerSchemeDataProvider.getAllStates().toArray(new String[0]);

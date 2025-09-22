@@ -207,28 +207,28 @@
                     android:layout_height="wrap_content"
                     android:text="Tomato"
                     android:layout_marginEnd="8dp"
-                    app:chipIcon="@drawable/ic_tomato" />
+                    app:chipIcon="@drawable/tomato" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pea"
                     android:layout_marginEnd="8dp"
-                    app:chipIcon="@drawable/ic_pea" />
+                    app:chipIcon="@drawable/pea" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cotton"
                     android:layout_marginEnd="8dp"
-                    app:chipIcon="@drawable/ic_cotton" />
+                    app:chipIcon="@drawable/cotton" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Onion"
                     android:layout_marginEnd="8dp"
-                    app:chipIcon="@drawable/ic_onion" />
+                    app:chipIcon="@drawable/onion" />
             </com.google.android.material.chip.ChipGroup>
         </LinearLayout>
     </ScrollView>

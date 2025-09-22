@@ -1,5 +1,7 @@
 package com.example.dummy;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
@@ -49,6 +53,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     listener.onProductClick(product);
                 }
             });
+            
+            // Handle buy button click
+            holder.buyButton.setOnClickListener(v -> {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, BuyActivity.class);
+                intent.putExtra("product", product);
+                context.startActivity(intent);
+            });
         }
     }
 
@@ -68,6 +80,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         TextView productBrand;
         TextView productPrice;
         TextView productQuantity;
+        MaterialButton buyButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -76,6 +89,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             productBrand = itemView.findViewById(R.id.product_brand);
             productPrice = itemView.findViewById(R.id.product_price);
             productQuantity = itemView.findViewById(R.id.product_quantity);
+            buyButton = itemView.findViewById(R.id.buy_button);
         }
     }
 }

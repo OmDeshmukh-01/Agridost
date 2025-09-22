@@ -61,12 +61,14 @@ public class MarketActivity extends AppCompatActivity {
         try {
             pagerAdapter = new MarketPagerAdapter(getSupportFragmentManager());
             viewPager.setAdapter(pagerAdapter);
+            viewPager.setOffscreenPageLimit(3);
             tabLayout.setupWithViewPager(viewPager);
-            
-            // Set tab icons and text
-            if (tabLayout.getTabCount() >= 2) {
-                tabLayout.getTabAt(0).setText("Market Prices").setIcon(R.drawable.ic_trending_up);
-                tabLayout.getTabAt(1).setText("Buy Products").setIcon(R.drawable.ic_shopping_cart);
+
+            // Ensure icons are shown (titles come from adapter)
+            if (tabLayout.getTabCount() >= 3) {
+                if (tabLayout.getTabAt(0) != null) tabLayout.getTabAt(0).setIcon(R.drawable.ic_trending_up);
+                if (tabLayout.getTabAt(1) != null) tabLayout.getTabAt(1).setIcon(R.drawable.ic_shopping_cart);
+                if (tabLayout.getTabAt(2) != null) tabLayout.getTabAt(2).setIcon(R.drawable.ic_sell);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -128,6 +130,8 @@ public class MarketActivity extends AppCompatActivity {
                     return new MarketPricesFragment();
                 case 1:
                     return new BuyProductsFragment();
+                case 2:
+                    return new SellProductsFragment();
                 default:
                     return new MarketPricesFragment();
             }
@@ -135,7 +139,21 @@ public class MarketActivity extends AppCompatActivity {
         
         @Override
         public int getCount() {
-            return 2;
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "Market Prices";
+                case 1:
+                    return "Buy Products";
+                case 2:
+                    return "Sell Products";
+                default:
+                    return "";
+            }
         }
     }
 }

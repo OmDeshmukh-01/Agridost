@@ -74,6 +74,12 @@
             <activity
                 android:name=".SchemeDetailActivity"
                 android:exported="true" />
+            <activity
+                android:name=".BuyActivity"
+                android:exported="true" />
+            <activity
+                android:name=".BuyProductsActivity"
+                android:exported="true" />
 
         <activity
             android:name=".WelcomeActivity"

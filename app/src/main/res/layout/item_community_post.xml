@@ -43,7 +43,7 @@
                 android:id="@+id/item_post_author_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Farmer User"
+                android:text="Sumit Chandra"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />

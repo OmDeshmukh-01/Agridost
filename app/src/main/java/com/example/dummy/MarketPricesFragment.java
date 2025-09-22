@@ -65,7 +65,7 @@ public class MarketPricesFragment extends Fragment {
         priceList.clear();
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_wheat,
+            R.drawable.wheat,
             "Wheat",
             "City Crop Market",
             "₹2,250/Q",
@@ -74,7 +74,7 @@ public class MarketPricesFragment extends Fragment {
         ));
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_maize,
+            R.drawable.maize,
             "Maize",
             "Lender Cart House",
             "₹1,680/Q",
@@ -83,7 +83,7 @@ public class MarketPricesFragment extends Fragment {
         ));
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_bajra,
+            R.drawable.bajra,
             "Bajra",
             "City Corp Market",
             "₹1,850/Q",
@@ -92,7 +92,7 @@ public class MarketPricesFragment extends Fragment {
         ));
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_tomato,
+            R.drawable.tomato,
             "Tomato",
             "Fresh Market",
             "₹45/kg",
@@ -101,7 +101,7 @@ public class MarketPricesFragment extends Fragment {
         ));
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_onion,
+            R.drawable.onion,
             "Onion",
             "Vegetable Market",
             "₹35/kg",
@@ -110,7 +110,7 @@ public class MarketPricesFragment extends Fragment {
         ));
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_potato,
+            R.drawable.potato,
             "Potato",
             "City Market",
             "₹28/kg",
@@ -119,7 +119,7 @@ public class MarketPricesFragment extends Fragment {
         ));
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_cotton,
+            R.drawable.cotton,
             "Cotton",
             "Textile Market",
             "₹6,500/Q",
@@ -128,7 +128,7 @@ public class MarketPricesFragment extends Fragment {
         ));
         
         priceList.add(new MarketPriceItem(
-            R.drawable.ic_sugarcane,
+            R.drawable.sugercane,
             "Sugarcane",
             "Sugar Mill Market",
             "₹320/Q",

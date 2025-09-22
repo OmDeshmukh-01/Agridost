@@ -21,8 +21,8 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/crop_image_background"
-            android:padding="8dp"
-            android:scaleType="centerInside"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
             android:contentDescription="Crop Image" />
 
         <!-- Crop Details -->
