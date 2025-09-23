@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Main.MainActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
@@ -579,7 +579,7 @@
                     <ImageView
                         android:layout_width="120dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/video_thumbnail_spider_mites"
+                        android:src="@drawable/spidermites"
                         android:scaleType="centerCrop"
                         android:background="@drawable/video_thumbnail_background"
                         android:layout_marginEnd="16dp" />
@@ -592,6 +592,7 @@
                         android:gravity="center_vertical">
 
                         <TextView
+                            android:id="@+id/top_video_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Spider Mites Diagnosis"
@@ -600,6 +601,7 @@
                             android:textColor="#333333" />
 
                         <TextView
+                            android:id="@+id/top_video_desc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Learn how to identify and treat spider mites"
@@ -607,11 +609,11 @@
                             android:textColor="#666666"
                             android:layout_marginTop="4dp" />
 
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/spidermites"
-                            android:layout_marginTop="8dp" />
+<!--                        <ImageView-->
+<!--                            android:layout_width="32dp"-->
+<!--                            android:layout_height="32dp"-->
+<!--                            android:src="@drawable/spidermites"-->
+<!--                            android:layout_marginTop="8dp" />-->
 
                     </LinearLayout>
 
@@ -620,6 +622,14 @@
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <!-- Container for swapping in fragments (Community/Market/Profile) -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_gravity="fill_vertical"/>
 
     <!-- Chatbot FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton

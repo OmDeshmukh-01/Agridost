@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white"
-    tools:context=".ProfileActivity">
+    tools:context=".Profile.ProfileActivity">
 
     <!-- Status Bar Spacer -->
     <View
@@ -26,18 +26,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="AgriDost"
+            android:text="@string/app_name"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
-
         <ImageView
             android:id="@+id/profile_menu_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_more_vert"
+            android:layout_width="18dp"
+            android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="4dp" />
+            android:padding="4dp"
+            android:src="@drawable/ic_more_vert" />
 
     </LinearLayout>
 
@@ -99,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Edit"
+                android:text="@string/profile_edit"
                 android:textSize="12sp"
                 android:textColor="#2196F3"
                 app:strokeColor="#2196F3"
@@ -183,7 +182,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Grow smart together!"
+                            android:text="@string/grow_smart_title"
                             android:textColor="@android:color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -192,7 +191,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Share AgriDost and help farmers solve their plant problems."
+                            android:text="@string/grow_smart_desc"
                             android:textColor="#666666"
                             android:textSize="14sp" />
 
@@ -204,7 +203,7 @@
                         style="@style/Widget.Material3.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Share AgriDost"
+                        android:text="@string/share_agridost"
                         android:textSize="12sp"
                         android:textColor="#2196F3" />
 
@@ -257,7 +256,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="How is your experience with AgriDost app?"
+                            android:text="@string/feedback_title"
                             android:textColor="@android:color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -266,7 +265,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="We'd love to hear your thoughts and suggestions."
+                            android:text="@string/feedback_desc"
                             android:textColor="#666666"
                             android:textSize="14sp" />
 
@@ -278,7 +277,7 @@
                         style="@style/Widget.Material3.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Give Feedback"
+                        android:text="@string/give_feedback"
                         android:textSize="12sp"
                         android:textColor="#2196F3" />
 

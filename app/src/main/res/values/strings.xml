@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AgriDost</string>
+    <string name="profile_edit">Edit</string>
+    <string name="grow_smart_title">Grow smart together!</string>
+    <string name="grow_smart_desc">Share AgriDost and help farmers solve their plant problems.</string>
+    <string name="share_agridost">Share AgriDost</string>
+    <string name="feedback_title">How is your experience with AgriDost app?</string>
+    <string name="feedback_desc">We&#39;d love to hear your thoughts and suggestions.</string>
+    <string name="give_feedback">Give Feedback</string>
 </resources>

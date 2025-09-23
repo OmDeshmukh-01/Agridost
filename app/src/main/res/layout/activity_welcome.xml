@@ -5,7 +5,7 @@
     android:id="@+id/act_wel_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeActivity">
+    tools:context=".Autentication.WelcomeActivity">
 
     <ImageView
         android:id="@+id/act_wel_bg_image"
