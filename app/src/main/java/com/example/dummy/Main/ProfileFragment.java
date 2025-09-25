@@ -17,9 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
-import androidx.core.os.LocaleListCompat;
+import android.widget.Button;
 
 import com.example.dummy.Autentication.LoginActivity;
 import com.example.dummy.Autentication.WelcomeActivity;
@@ -44,7 +43,7 @@ public class ProfileFragment extends Fragment {
     private MaterialCardView feedbackCard;
     private ImageView profileAvatar;
     private ImageView menuButton;
-    private MaterialButton profileLanguageButton;
+    private Button languageButton;
 
     private User currentUser;
 
@@ -56,6 +55,7 @@ public class ProfileFragment extends Fragment {
         setupProfileInfo();
         setupTabs();
         setupCards(view);
+        setupLanguage(view);
         return view;
     }
 
@@ -68,7 +68,6 @@ public class ProfileFragment extends Fragment {
         feedbackCard = root.findViewById(R.id.feedback_card);
         profileAvatar = root.findViewById(R.id.profile_avatar);
         menuButton = root.findViewById(R.id.profile_menu_button);
-        profileLanguageButton = root.findViewById(R.id.profile_language_button);
     }
 
     private void setupProfileInfo() {
@@ -114,9 +113,6 @@ public class ProfileFragment extends Fragment {
         });
 
         menuButton.setOnClickListener(v -> showMenuDialog());
-        if (profileLanguageButton != null) {
-            profileLanguageButton.setOnClickListener(v -> showLanguageSelectionDialog());
-        }
     }
 
     private void loadAvatar(String imagePath) {
@@ -139,7 +135,7 @@ public class ProfileFragment extends Fragment {
         builder.setItems(menuItems, (dialog, which) -> {
             switch (which) {
                 case 0:
-                    showLanguageSelectionDialog();
+                    Toast.makeText(requireContext(), "Settings feature coming soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
                     showHelpSupport();
@@ -171,45 +167,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private void showLanguageSelectionDialog() {
-        final String[] languageNames = new String[]{
-                "हिन्दी (Hindi)",
-                "मराठी (Marathi)",
-                "ਪੰਜਾਬੀ (Punjabi)",
-                "বাংলা (Bengali)",
-                "ગુજરાતી (Gujarati)"
-        };
-
-        final String[] languageTags = new String[]{
-                "hi",
-                "mr",
-                "pa",
-                "bn",
-                "gu"
-        };
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-        builder.setTitle("Choose Language");
-        builder.setItems(languageNames, (dialog, which) -> {
-            String tag = languageTags[which];
-            applyAppLanguage(tag);
-        });
-        builder.setNegativeButton("Cancel", null);
-        builder.show();
-    }
-
-    private void applyAppLanguage(String languageTag) {
-        LocaleListCompat appLocale = LocaleListCompat.forLanguageTags(languageTag);
-        AppCompatDelegate.setApplicationLocales(appLocale);
-
-        SharedPreferences prefs = requireContext().getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE);
-        prefs.edit().putString("app_language", languageTag).apply();
-
-        // Recreate host activity if attached to reflect changes
-        if (getActivity() != null) {
-            getActivity().recreate();
-        }
-    }
 
     private void showAbout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
@@ -274,6 +231,34 @@ public class ProfileFragment extends Fragment {
 
         MaterialButton feedbackButton = root.findViewById(R.id.feedback_button);
         feedbackButton.setOnClickListener(v -> giveFeedback());
+    }
+
+    private void setupLanguage(View root) {
+        languageButton = root.findViewById(R.id.btnLanguage);
+        if (languageButton != null) {
+            languageButton.setOnClickListener(v -> showLanguageSelectionDialog());
+        }
+    }
+
+    private void showLanguageSelectionDialog() {
+        String[] languageNames = new String[]{"English", "हिंदी", "मराठी", "বাংলা", "ਪੰਜਾਬੀ"};
+        String[] languageCodes = new String[]{"en", "hi", "mr", "bn", "pa"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle(getString(R.string.select_language));
+        builder.setItems(languageNames, (dialog, which) -> {
+            String selectedLanguage = languageCodes[which];
+            com.example.dummy.LocaleHelper.setLocale(requireContext().getApplicationContext(), selectedLanguage);
+            // Restart only the hosting activity to apply the locale
+            if (getActivity() != null) {
+                Intent current = getActivity().getIntent();
+                getActivity().finish();
+                getActivity().overridePendingTransition(0, 0);
+                startActivity(current);
+            }
+        });
+        builder.setNegativeButton(getString(R.string.cancel), null);
+        builder.show();
     }
 
     private void shareAgriDost() {

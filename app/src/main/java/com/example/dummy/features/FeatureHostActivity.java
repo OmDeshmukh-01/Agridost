@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.dummy.R;
 
-public class FeatureHostActivity extends AppCompatActivity {
+public class FeatureHostActivity extends BaseActivity {
 
     public static final String EXTRA_FEATURE_KEY = "feature_key";
 

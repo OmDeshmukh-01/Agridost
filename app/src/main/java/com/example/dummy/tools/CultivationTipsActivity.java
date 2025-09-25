@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 
 import com.example.dummy.CultivationTipsAdapter;
 import com.example.dummy.R;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CultivationTipsActivity extends AppCompatActivity {
+public class CultivationTipsActivity extends BaseActivity {
 
     private ExpandableListView expandableListView;
     private CultivationTipsAdapter adapter;

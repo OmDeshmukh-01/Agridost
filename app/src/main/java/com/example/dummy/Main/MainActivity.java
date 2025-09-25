@@ -1,6 +1,7 @@
 package com.example.dummy.Main;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -39,6 +40,7 @@ import com.example.dummy.features.FeatureHostActivity;
 import com.example.dummy.R;
 import com.example.dummy.Weather;
 import com.example.dummy.services.WeatherService;
+import com.example.dummy.LocaleHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -52,7 +54,7 @@ import com.example.dummy.Main.CommunityFragment;
 import com.example.dummy.Main.MarketFragment;
 import com.example.dummy.Main.ProfileFragment;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final int LOCATION_PERMISSION_REQUEST = 100;
     
@@ -77,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     
     
     private String currentLocation = "Pune,India";
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         });
 
         // Pests & Diseases (reuse CropHealActivity)
-        findViewById(R.id.card_pests_diseases).setOnClickListener(v -> {
+        findViewById(R.id.card_soil_detection).setOnClickListener(v -> {
             Intent intent = new Intent(this, FeatureHostActivity.class);
             intent.putExtra(FeatureHostActivity.EXTRA_FEATURE_KEY, FeatureHostActivity.FEATURE_CROP_HEAL);
             startActivity(intent);

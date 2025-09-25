@@ -6,12 +6,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 
 import com.example.dummy.network.ApiConfig;
 import com.example.dummy.services.RealtimeChatService;
 
-public class ApiTestActivity extends AppCompatActivity {
+public class ApiTestActivity extends BaseActivity {
     private static final String TAG = "ApiTestActivity";
     private TextView resultText;
     private Button testButton;

@@ -1,10 +1,108 @@
 <resources>
+    <!-- App Name -->
     <string name="app_name">AgriDost</string>
-    <string name="profile_edit">Edit</string>
+    
+    <!-- Language Selection -->
+    <string name="language">Language</string>
+    <string name="select_language">Select Language</string>
+    <string name="language_changed">Language changed successfully</string>
+    
+    <!-- Authentication -->
+    <string name="welcome_title">Welcome to AgriDost</string>
+    <string name="welcome_subtitle">Your agricultural assistant</string>
+    <string name="get_started">Get Started</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login_success">Login successful! Welcome</string>
+    <string name="signup_success">Account created successfully! Welcome</string>
+    <string name="invalid_credentials">Invalid email or password</string>
+    <string name="email_exists">Email already exists. Please use a different email.</string>
+    <string name="auth_placeholder">Authentication will be added with Firebase</string>
+    <string name="registration_placeholder">Registration will be added with Firebase</string>
+    
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="guest_user">Guest User</string>
+    <string name="login_to_customize">Please log in to customize your profile</string>
+    <string name="login_to_edit">Please log in to edit your profile</string>
+    <string name="profile_updated">Profile updated successfully!</string>
+    <string name="logout">Logout</string>
+    <string name="logout_success">Logged out successfully</string>
+    <string name="logout_confirm">Are you sure you want to logout?</string>
+    
+    <!-- Menu -->
+    <string name="menu">Menu</string>
+    <string name="settings">Settings</string>
+    <string name="help_support">Help &amp; Support</string>
+    <string name="about">About AgriDost</string>
+    <string name="settings_coming_soon">Settings feature coming soon!</string>
+    
+    <!-- Community -->
+    <string name="community">Community</string>
+    <string name="ask_question">Ask Question</string>
+    <string name="community_coming_soon">Community features coming soon!</string>
+    
+    <!-- Market -->
+    <string name="market">Market</string>
+    <string name="buy_products">Buy Products</string>
+    <string name="sell_products">Sell Products</string>
+    <string name="market_prices">Market Prices</string>
+    
+    <!-- Tools -->
+    <string name="crops">Crops</string>
+    <string name="fertilizer_calculator">Fertilizer Calculator</string>
+    <string name="pests_diseases">Pests &amp; Diseases</string>
+    <string name="cultivation_tips">Cultivation Tips</string>
+    <string name="disease_alert">Disease Alert</string>
+    <string name="profit_estimator">Profit Estimator</string>
+    <string name="crop_heal">Crop Heal</string>
+    <string name="take_picture">Take Picture</string>
+    
+    <!-- Weather -->
+    <string name="weather">Weather</string>
+    <string name="select_location">Select Location</string>
+    <string name="use_current_location">Use Current Location</string>
+    <string name="weather_update_failed">Weather update failed</string>
+    <string name="location_permission_denied">Location permission denied. Using default location.</string>
+    <string name="location_error">Location error</string>
+    
+    <!-- Farmer Schemes -->
+    <string name="farmer_schemes">Farmer Schemes</string>
+    <string name="search_schemes">Search schemes...</string>
+    <string name="filter_state">Filter by State</string>
+    <string name="filter_type">Filter by Type</string>
+    <string name="all_states">All States</string>
+    <string name="all_types">All Types</string>
+    
+    <!-- Feedback & Sharing -->
     <string name="grow_smart_title">Grow smart together!</string>
     <string name="grow_smart_desc">Share AgriDost and help farmers solve their plant problems.</string>
     <string name="share_agridost">Share AgriDost</string>
     <string name="feedback_title">How is your experience with AgriDost app?</string>
-    <string name="feedback_desc">We&#39;d love to hear your thoughts and suggestions.</string>
+    <string name="feedback_desc">We would love to hear your thoughts and suggestions.</string>
     <string name="give_feedback">Give Feedback</string>
+    <string name="share_text">Check out AgriDost - Your agricultural assistant! Get expert advice on farming, crop management, plant diseases, and more. Download now and grow smart together! 🌱</string>
+    
+    <!-- About -->
+    <string name="about_title">About AgriDost</string>
+    <string name="about_message">AgriDost v1.0\n\nYour agricultural assistant for crop management, plant disease identification, and farming advice.\n\nDeveloped with ❤️ for farmers worldwide.</string>
+    
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="loading">Loading...</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="updated">Updated</string>
+    <string name="coming_soon">Coming Soon</string>
 </resources>

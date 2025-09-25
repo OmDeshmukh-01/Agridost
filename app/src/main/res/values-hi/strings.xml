@@ -1,0 +1,108 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">एग्रीडॉस्ट</string>
+    
+    <!-- Language Selection -->
+    <string name="language">भाषा</string>
+    <string name="select_language">भाषा चुनें</string>
+    <string name="language_changed">भाषा सफलतापूर्वक बदल गई</string>
+    
+    <!-- Authentication -->
+    <string name="welcome_title">एग्रीडॉस्ट में आपका स्वागत है</string>
+    <string name="welcome_subtitle">आपका कृषि सहायक</string>
+    <string name="get_started">शुरू करें</string>
+    <string name="login">लॉगिन</string>
+    <string name="signup">साइन अप</string>
+    <string name="email">ईमेल</string>
+    <string name="password">पासवर्ड</string>
+    <string name="name">नाम</string>
+    <string name="confirm_password">पासवर्ड की पुष्टि करें</string>
+    <string name="login_success">लॉगिन सफल! स्वागत है</string>
+    <string name="signup_success">खाता सफलतापूर्वक बनाया गया! स्वागत है</string>
+    <string name="invalid_credentials">अमान्य ईमेल या पासवर्ड</string>
+    <string name="email_exists">ईमेल पहले से मौजूद है। कृपया एक अलग ईमेल का उपयोग करें।</string>
+    <string name="auth_placeholder">प्रमाणीकरण Firebase के साथ जोड़ा जाएगा</string>
+    <string name="registration_placeholder">पंजीकरण Firebase के साथ जोड़ा जाएगा</string>
+    
+    <!-- Profile -->
+    <string name="profile_title">प्रोफ़ाइल</string>
+    <string name="edit_profile">प्रोफ़ाइल संपादित करें</string>
+    <string name="guest_user">अतिथि उपयोगकर्ता</string>
+    <string name="login_to_customize">कृपया अपनी प्रोफ़ाइल को अनुकूलित करने के लिए लॉगिन करें</string>
+    <string name="login_to_edit">कृपया अपनी प्रोफ़ाइल संपादित करने के लिए लॉगिन करें</string>
+    <string name="profile_updated">प्रोफ़ाइल सफलतापूर्वक अपडेट हो गई!</string>
+    <string name="logout">लॉग आउट</string>
+    <string name="logout_success">सफलतापूर्वक लॉग आउट हो गए</string>
+    <string name="logout_confirm">क्या आप वाकई लॉग आउट करना चाहते हैं?</string>
+    
+    <!-- Menu -->
+    <string name="menu">मेनू</string>
+    <string name="settings">सेटिंग्स</string>
+    <string name="help_support">सहायता और समर्थन</string>
+    <string name="about">एग्रीडॉस्ट के बारे में</string>
+    <string name="settings_coming_soon">सेटिंग्स सुविधा जल्द आ रही है!</string>
+    
+    <!-- Community -->
+    <string name="community">समुदाय</string>
+    <string name="ask_question">प्रश्न पूछें</string>
+    <string name="community_coming_soon">समुदाय सुविधाएं जल्द आ रही हैं!</string>
+    
+    <!-- Market -->
+    <string name="market">बाजार</string>
+    <string name="buy_products">उत्पाद खरीदें</string>
+    <string name="sell_products">उत्पाद बेचें</string>
+    <string name="market_prices">बाजार मूल्य</string>
+    
+    <!-- Tools -->
+    <string name="crops">फसलें</string>
+    <string name="fertilizer_calculator">उर्वरक कैलकुलेटर</string>
+    <string name="pests_diseases">कीट और रोग</string>
+    <string name="cultivation_tips">खेती के सुझाव</string>
+    <string name="disease_alert">रोग चेतावनी</string>
+    <string name="profit_estimator">लाभ अनुमानक</string>
+    <string name="crop_heal">फसल उपचार</string>
+    <string name="take_picture">तस्वीर लें</string>
+    
+    <!-- Weather -->
+    <string name="weather">मौसम</string>
+    <string name="select_location">स्थान चुनें</string>
+    <string name="use_current_location">वर्तमान स्थान का उपयोग करें</string>
+    <string name="weather_update_failed">मौसम अपडेट विफल</string>
+    <string name="location_permission_denied">स्थान अनुमति अस्वीकृत। डिफ़ॉल्ट स्थान का उपयोग कर रहे हैं।</string>
+    <string name="location_error">स्थान त्रुटि</string>
+    
+    <!-- Farmer Schemes -->
+    <string name="farmer_schemes">किसान योजनाएं</string>
+    <string name="search_schemes">योजनाएं खोजें...</string>
+    <string name="filter_state">राज्य के अनुसार फ़िल्टर करें</string>
+    <string name="filter_type">प्रकार के अनुसार फ़िल्टर करें</string>
+    <string name="all_states">सभी राज्य</string>
+    <string name="all_types">सभी प्रकार</string>
+    
+    <!-- Feedback & Sharing -->
+    <string name="grow_smart_title">स्मार्ट तरीके से उगाएं!</string>
+    <string name="grow_smart_desc">एग्रीडॉस्ट साझा करें और किसानों को अपनी पौधों की समस्याओं को हल करने में मदद करें।</string>
+    <string name="share_agridost">एग्रीडॉस्ट साझा करें</string>
+    <string name="feedback_title">एग्रीडॉस्ट ऐप के साथ आपका अनुभव कैसा रहा?</string>
+    <string name="feedback_desc">हम आपके विचारों और सुझावों को सुनना पसंद करेंगे।</string>
+    <string name="give_feedback">फीडबैक दें</string>
+    <string name="share_text">एग्रीडॉस्ट देखें - आपका कृषि सहायक! खेती, फसल प्रबंधन, पौधों के रोगों और अधिक पर विशेषज्ञ सलाह प्राप्त करें। अभी डाउनलोड करें और स्मार्ट तरीके से उगाएं! 🌱</string>
+    
+    <!-- About -->
+    <string name="about_title">एग्रीडॉस्ट के बारे में</string>
+    <string name="about_message">एग्रीडॉस्ट v1.0\n\nफसल प्रबंधन, पौधों के रोगों की पहचान और खेती की सलाह के लिए आपका कृषि सहायक।\n\nदुनिया भर के किसानों के लिए ❤️ के साथ विकसित।</string>
+    
+    <!-- Common -->
+    <string name="ok">ठीक है</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="save">सहेजें</string>
+    <string name="edit">संपादित करें</string>
+    <string name="delete">हटाएं</string>
+    <string name="search">खोजें</string>
+    <string name="filter">फ़िल्टर</string>
+    <string name="loading">लोड हो रहा है...</string>
+    <string name="error">त्रुटि</string>
+    <string name="success">सफलता</string>
+    <string name="updated">अपडेट किया गया</string>
+    <string name="coming_soon">जल्द आ रहा है</string>
+</resources>

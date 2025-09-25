@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,7 +25,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
-public class CommunityActivity extends AppCompatActivity implements CommunityPostAdapter.OnPostInteractionListener {
+public class CommunityActivity extends BaseActivity implements CommunityPostAdapter.OnPostInteractionListener {
 
     private RecyclerView recyclerViewPosts;
     private CommunityPostAdapter postAdapter;

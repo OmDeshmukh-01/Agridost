@@ -361,7 +361,7 @@
 
                 <!-- Pests & Diseases Card -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_pests_diseases"
+                    android:id="@+id/card_soil_detection"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -380,13 +380,13 @@
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:src="@drawable/ic_pest"
+                            android:src="@drawable/ic_cultivation"
                             android:layout_marginBottom="8dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pests &amp; diseases"
+                            android:text="Soil Detection"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textColor="#333333"
@@ -399,6 +399,7 @@
                             android:layout_marginTop="8dp" />
 
                     </LinearLayout>
+
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
@@ -555,70 +556,7 @@
             <include layout="@layout/farmer_schemes_dashboard" />
 
             <!-- Top Videos Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🔥 Top Videos"
-                android:textStyle="bold"
-                android:textSize="22sp"
-                android:layout_marginTop="24dp" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="16dp"
-                app:strokeWidth="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/spidermites"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/video_thumbnail_background"
-                        android:layout_marginEnd="16dp" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:id="@+id/top_video_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Spider Mites Diagnosis"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="#333333" />
-
-                        <TextView
-                            android:id="@+id/top_video_desc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Learn how to identify and treat spider mites"
-                            android:textSize="12sp"
-                            android:textColor="#666666"
-                            android:layout_marginTop="4dp" />
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="32dp"-->
-<!--                            android:layout_height="32dp"-->
-<!--                            android:src="@drawable/spidermites"-->
-<!--                            android:layout_marginTop="8dp" />-->
-
-                    </LinearLayout>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

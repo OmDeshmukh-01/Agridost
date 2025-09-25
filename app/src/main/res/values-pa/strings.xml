@@ -1,0 +1,108 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">ਐਗਰੀਡੌਸਟ</string>
+    
+    <!-- Language Selection -->
+    <string name="language">ਭਾਸ਼ਾ</string>
+    <string name="select_language">ਭਾਸ਼ਾ ਚੁਣੋ</string>
+    <string name="language_changed">ਭਾਸ਼ਾ ਸਫਲਤਾਪੂਰਵਕ ਬਦਲ ਗਈ</string>
+    
+    <!-- Authentication -->
+    <string name="welcome_title">ਐਗਰੀਡੌਸਟ ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ</string>
+    <string name="welcome_subtitle">ਤੁਹਾਡਾ ਖੇਤੀਬਾੜੀ ਸਹਾਇਕ</string>
+    <string name="get_started">ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="login">ਲੌਗ ਇਨ</string>
+    <string name="signup">ਸਾਈਨ ਅੱਪ</string>
+    <string name="email">ਈਮੇਲ</string>
+    <string name="password">ਪਾਸਵਰਡ</string>
+    <string name="name">ਨਾਮ</string>
+    <string name="confirm_password">ਪਾਸਵਰਡ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ</string>
+    <string name="login_success">ਲੌਗ ਇਨ ਸਫਲ! ਸਵਾਗਤ ਹੈ</string>
+    <string name="signup_success">ਖਾਤਾ ਸਫਲਤਾਪੂਰਵਕ ਬਣਾਇਆ ਗਿਆ! ਸਵਾਗਤ ਹੈ</string>
+    <string name="invalid_credentials">ਗਲਤ ਈਮੇਲ ਜਾਂ ਪਾਸਵਰਡ</string>
+    <string name="email_exists">ਈਮੇਲ ਪਹਿਲਾਂ ਤੋਂ ਮੌਜੂਦ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਵੱਖਰਾ ਈਮੇਲ ਵਰਤੋ।</string>
+    <string name="auth_placeholder">Firebase ਨਾਲ ਪ੍ਰਮਾਣੀਕਰਣ ਜੋੜਿਆ ਜਾਵੇਗਾ</string>
+    <string name="registration_placeholder">Firebase ਨਾਲ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਜੋੜਿਆ ਜਾਵੇਗਾ</string>
+    
+    <!-- Profile -->
+    <string name="profile_title">ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="edit_profile">ਪ੍ਰੋਫਾਈਲ ਸੰਪਾਦਿਤ ਕਰੋ</string>
+    <string name="guest_user">ਮਹਿਮਾਨ ਵਰਤੋਂਕਾਰ</string>
+    <string name="login_to_customize">ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਪ੍ਰੋਫਾਈਲ ਕਸਟਮਾਈਜ਼ ਕਰਨ ਲਈ ਲੌਗ ਇਨ ਕਰੋ</string>
+    <string name="login_to_edit">ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਪ੍ਰੋਫਾਈਲ ਸੰਪਾਦਿਤ ਕਰਨ ਲਈ ਲੌਗ ਇਨ ਕਰੋ</string>
+    <string name="profile_updated">ਪ੍ਰੋਫਾਈਲ ਸਫਲਤਾਪੂਰਵਕ ਅਪਡੇਟ ਹੋ ਗਿਆ!</string>
+    <string name="logout">ਲੌਗ ਆਉਟ</string>
+    <string name="logout_success">ਸਫਲਤਾਪੂਰਵਕ ਲੌਗ ਆਉਟ ਹੋ ਗਿਆ</string>
+    <string name="logout_confirm">ਕੀ ਤੁਸੀਂ ਯਕੀਨਨ ਲੌਗ ਆਉਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
+    
+    <!-- Menu -->
+    <string name="menu">ਮੇਨੂ</string>
+    <string name="settings">ਸੈਟਿੰਗਜ਼</string>
+    <string name="help_support">ਮਦਦ ਅਤੇ ਸਹਾਇਤਾ</string>
+    <string name="about">ਐਗਰੀਡੌਸਟ ਬਾਰੇ</string>
+    <string name="settings_coming_soon">ਸੈਟਿੰਗਜ਼ ਫੀਚਰ ਜਲਦੀ ਆ ਰਿਹਾ ਹੈ!</string>
+    
+    <!-- Community -->
+    <string name="community">ਕਮਿਊਨਿਟੀ</string>
+    <string name="ask_question">ਸਵਾਲ ਪੁੱਛੋ</string>
+    <string name="community_coming_soon">ਕਮਿਊਨਿਟੀ ਫੀਚਰ ਜਲਦੀ ਆ ਰਹੇ ਹਨ!</string>
+    
+    <!-- Market -->
+    <string name="market">ਬਾਜ਼ਾਰ</string>
+    <string name="buy_products">ਉਤਪਾਦ ਖਰੀਦੋ</string>
+    <string name="sell_products">ਉਤਪਾਦ ਵੇਚੋ</string>
+    <string name="market_prices">ਬਾਜ਼ਾਰ ਮੁੱਲ</string>
+    
+    <!-- Tools -->
+    <string name="crops">ਫਸਲਾਂ</string>
+    <string name="fertilizer_calculator">ਖਾਦ ਕੈਲਕੁਲੇਟਰ</string>
+    <string name="pests_diseases">ਕੀਟ ਅਤੇ ਰੋਗ</string>
+    <string name="cultivation_tips">ਖੇਤੀ ਦੇ ਸੁਝਾਅ</string>
+    <string name="disease_alert">ਰੋਗ ਚੇਤਾਵਨੀ</string>
+    <string name="profit_estimator">ਲਾਭ ਅਨੁਮਾਨਕ</string>
+    <string name="crop_heal">ਫਸਲ ਇਲਾਜ</string>
+    <string name="take_picture">ਤਸਵੀਰ ਲਓ</string>
+    
+    <!-- Weather -->
+    <string name="weather">ਮੌਸਮ</string>
+    <string name="select_location">ਸਥਾਨ ਚੁਣੋ</string>
+    <string name="use_current_location">ਮੌਜੂਦਾ ਸਥਾਨ ਵਰਤੋ</string>
+    <string name="weather_update_failed">ਮੌਸਮ ਅਪਡੇਟ ਅਸਫਲ</string>
+    <string name="location_permission_denied">ਸਥਾਨ ਦੀ ਇਜਾਜ਼ਤ ਰੱਦ ਕੀਤੀ ਗਈ। ਡਿਫੌਲਟ ਸਥਾਨ ਵਰਤ ਰਹੇ ਹਾਂ।</string>
+    <string name="location_error">ਸਥਾਨ ਗਲਤੀ</string>
+    
+    <!-- Farmer Schemes -->
+    <string name="farmer_schemes">ਕਿਸਾਨ ਯੋਜਨਾਵਾਂ</string>
+    <string name="search_schemes">ਯੋਜਨਾਵਾਂ ਖੋਜੋ...</string>
+    <string name="filter_state">ਰਾਜ ਦੇ ਅਨੁਸਾਰ ਫਿਲਟਰ ਕਰੋ</string>
+    <string name="filter_type">ਕਿਸਮ ਦੇ ਅਨੁਸਾਰ ਫਿਲਟਰ ਕਰੋ</string>
+    <string name="all_states">ਸਾਰੇ ਰਾਜ</string>
+    <string name="all_types">ਸਾਰੀਆਂ ਕਿਸਮਾਂ</string>
+    
+    <!-- Feedback & Sharing -->
+    <string name="grow_smart_title">ਸਮਾਰਟ ਤਰੀਕੇ ਨਾਲ ਉਗਾਓ!</string>
+    <string name="grow_smart_desc">ਐਗਰੀਡੌਸਟ ਸਾਂਝਾ ਕਰੋ ਅਤੇ ਕਿਸਾਨਾਂ ਨੂੰ ਆਪਣੀਆਂ ਪੌਦਿਆਂ ਦੀਆਂ ਸਮੱਸਿਆਵਾਂ ਹੱਲ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰੋ।</string>
+    <string name="share_agridost">ਐਗਰੀਡੌਸਟ ਸਾਂਝਾ ਕਰੋ</string>
+    <string name="feedback_title">ਐਗਰੀਡੌਸਟ ਐਪ ਦੇ ਨਾਲ ਤੁਹਾਡਾ ਅਨੁਭਵ ਕਿਵੇਂ ਰਿਹਾ?</string>
+    <string name="feedback_desc">ਅਸੀਂ ਤੁਹਾਡੇ ਵਿਚਾਰ ਅਤੇ ਸੁਝਾਅ ਸੁਣਨਾ ਪਸੰਦ ਕਰਾਂਗੇ।</string>
+    <string name="give_feedback">ਫੀਡਬੈਕ ਦਿਓ</string>
+    <string name="share_text">ਐਗਰੀਡੌਸਟ ਦੇਖੋ - ਤੁਹਾਡਾ ਖੇਤੀਬਾੜੀ ਸਹਾਇਕ! ਖੇਤੀ, ਫਸਲ ਪ੍ਰਬੰਧਨ, ਪੌਦਿਆਂ ਦੇ ਰੋਗਾਂ ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ ਬਾਰੇ ਮਾਹਿਰ ਸਲਾਹ ਪ੍ਰਾਪਤ ਕਰੋ। ਹੁਣੇ ਡਾਉਨਲੋਡ ਕਰੋ ਅਤੇ ਸਮਾਰਟ ਤਰੀਕੇ ਨਾਲ ਉਗਾਓ! 🌱</string>
+    
+    <!-- About -->
+    <string name="about_title">ਐਗਰੀਡੌਸਟ ਬਾਰੇ</string>
+    <string name="about_message">ਐਗਰੀਡੌਸਟ v1.0\n\nਫਸਲ ਪ੍ਰਬੰਧਨ, ਪੌਦਿਆਂ ਦੇ ਰੋਗਾਂ ਦੀ ਪਛਾਣ ਅਤੇ ਖੇਤੀ ਸਲਾਹ ਲਈ ਤੁਹਾਡਾ ਖੇਤੀਬਾੜੀ ਸਹਾਇਕ।\n\nਦੁਨੀਆ ਭਰ ਦੇ ਕਿਸਾਨਾਂ ਲਈ ❤️ ਨਾਲ ਵਿਕਸਿਤ।</string>
+    
+    <!-- Common -->
+    <string name="ok">ਠੀਕ ਹੈ</string>
+    <string name="cancel">ਰੱਦ ਕਰੋ</string>
+    <string name="save">ਸੇਵ ਕਰੋ</string>
+    <string name="edit">ਸੰਪਾਦਿਤ ਕਰੋ</string>
+    <string name="delete">ਹਟਾਓ</string>
+    <string name="search">ਖੋਜੋ</string>
+    <string name="filter">ਫਿਲਟਰ</string>
+    <string name="loading">ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...</string>
+    <string name="error">ਗਲਤੀ</string>
+    <string name="success">ਸਫਲਤਾ</string>
+    <string name="updated">ਅਪਡੇਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="coming_soon">ਜਲਦੀ ਆ ਰਿਹਾ ਹੈ</string>
+</resources>

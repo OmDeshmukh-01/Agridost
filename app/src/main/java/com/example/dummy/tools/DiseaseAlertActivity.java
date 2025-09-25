@@ -7,7 +7,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 
 import com.example.dummy.DiseaseAlertAdapter;
 import com.example.dummy.R;
@@ -15,7 +15,7 @@ import com.example.dummy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiseaseAlertActivity extends AppCompatActivity {
+public class DiseaseAlertActivity extends BaseActivity {
 
     private Spinner spinnerRegion;
     private Spinner spinnerCrop;

@@ -2,12 +2,12 @@ package com.example.dummy.market;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.dummy.R;
 
-public class BuyProductsActivity extends AppCompatActivity {
+public class BuyProductsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

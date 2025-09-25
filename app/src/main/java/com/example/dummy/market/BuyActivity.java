@@ -8,14 +8,14 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.dummy.ProductItem;
 import com.example.dummy.R;
 import com.google.android.material.button.MaterialButton;
 
-public class BuyActivity extends AppCompatActivity {
+public class BuyActivity extends BaseActivity {
 
     private ImageView productImage;
     private TextView productName;

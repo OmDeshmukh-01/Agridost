@@ -8,11 +8,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 
 import com.example.dummy.R;
 
-public class ProfitEstimatorActivity extends AppCompatActivity {
+public class ProfitEstimatorActivity extends BaseActivity {
 
     private EditText etFieldArea;
     private Spinner spinnerCropType;

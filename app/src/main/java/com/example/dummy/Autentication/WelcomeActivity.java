@@ -1,17 +1,24 @@
 package com.example.dummy.Autentication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dummy.BaseActivity;
 import com.example.dummy.Main.MainActivity;
 import com.example.dummy.R;
 import com.google.android.material.button.MaterialButton;
+import com.example.dummy.LocaleHelper;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends BaseActivity {
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

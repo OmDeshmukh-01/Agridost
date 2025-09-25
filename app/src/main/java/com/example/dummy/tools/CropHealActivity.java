@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -29,7 +29,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Locale;
 
-public class CropHealActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class CropHealActivity extends BaseActivity implements TextToSpeech.OnInitListener {
     
     private static final String TAG = "CropHealActivity";
     private static final int CAMERA_PERMISSION_CODE = 100;

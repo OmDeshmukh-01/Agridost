@@ -1,6 +1,7 @@
 package com.example.dummy.Profile;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -9,13 +10,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 
 import com.example.dummy.Autentication.LoginActivity;
 import com.example.dummy.Autentication.WelcomeActivity;
@@ -24,6 +26,7 @@ import com.example.dummy.Main.MainActivity;
 import com.example.dummy.market.MarketActivity;
 import com.example.dummy.R;
 import com.example.dummy.User;
+import com.example.dummy.LocaleHelper;
 // Session/auth will be added later with Firebase
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
@@ -32,7 +35,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.io.File;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends BaseActivity {
 
     private static final int EDIT_PROFILE_REQUEST = 100;
     
@@ -45,15 +48,24 @@ public class ProfileActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private ImageView profileAvatar;
     private ImageView menuButton;
+    private Button btnLanguage;
+    
     
     private User currentUser;
     private Object unused;
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        
         initializeViews();
         setupProfileInfo();
         setupTabs();
@@ -71,6 +83,17 @@ public class ProfileActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.profile_bottom_nav);
         profileAvatar = findViewById(R.id.profile_avatar);
         menuButton = findViewById(R.id.profile_menu_button);
+        btnLanguage = findViewById(R.id.btnLanguage);
+        
+        
+        // Debug: Check if buttons are found
+        if (btnLanguage == null) {
+            Toast.makeText(this, "Language button 1 NOT found!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Language button 1 found!", Toast.LENGTH_SHORT).show();
+        }
+        
+        
         
         unused = null;
     }
@@ -125,6 +148,19 @@ public class ProfileActivity extends AppCompatActivity {
         
         // Setup menu button
         menuButton.setOnClickListener(v -> showMenuDialog());
+
+        // Setup language button
+        if (btnLanguage != null) {
+            btnLanguage.setClickable(true);
+            btnLanguage.setEnabled(true);
+            btnLanguage.setOnClickListener(v -> {
+                // Debug: Show current language
+                String currentLang = LocaleHelper.getLanguage(this);
+                Toast.makeText(this, "Current language: " + currentLang, Toast.LENGTH_SHORT).show();
+                showLanguageSelectionDialog();
+            });
+        }
+
     }
     
     private void loadAvatar(String imagePath) {
@@ -140,22 +176,28 @@ public class ProfileActivity extends AppCompatActivity {
     }
     
     private void showMenuDialog() {
-        String[] menuItems = {"Settings", "Help & Support", "About AgriDost", "Logout"};
+        String[] menuItems = {"Test Dialog", "Language", "Settings", "Help & Support", "About AgriDost", "Logout"};
         
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Menu");
         builder.setItems(menuItems, (dialog, which) -> {
             switch (which) {
                 case 0:
-                    showSettings();
+                    showSimpleTestDialog();
                     break;
                 case 1:
-                    showHelpSupport();
+                    showLanguageSelectionDialog();
                     break;
                 case 2:
-                    showAbout();
+                    showSettings();
                     break;
                 case 3:
+                    showHelpSupport();
+                    break;
+                case 4:
+                    showAbout();
+                    break;
+                case 5:
                     logout();
                     break;
             }
@@ -164,8 +206,32 @@ public class ProfileActivity extends AppCompatActivity {
     }
     
     private void showSettings() {
-        Toast.makeText(this, "Settings feature coming soon!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.settings_coming_soon), Toast.LENGTH_SHORT).show();
     }
+
+    private void showSimpleTestDialog() {
+        Toast.makeText(this, "Creating simple test dialog...", Toast.LENGTH_SHORT).show();
+        
+        try {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Test Dialog");
+            builder.setMessage("This is a simple test dialog. If you can see this, the button click is working!");
+            builder.setPositiveButton("OK", (dialog, which) -> {
+                Toast.makeText(this, "Test dialog OK clicked!", Toast.LENGTH_SHORT).show();
+            });
+            builder.setNegativeButton("Cancel", (dialog, which) -> {
+                Toast.makeText(this, "Test dialog Cancel clicked!", Toast.LENGTH_SHORT).show();
+            });
+            
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            Toast.makeText(this, "Simple test dialog shown!", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "Error in simple dialog: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+
 
     
     private void showHelpSupport() {
@@ -253,6 +319,11 @@ public class ProfileActivity extends AppCompatActivity {
         // Feedback card
         MaterialButton feedbackButton = findViewById(R.id.feedback_button);
         feedbackButton.setOnClickListener(v -> giveFeedback());
+    }
+
+    // XML onClick handler for language button (btnLanguage)
+    public void onLanguageClick(View view) {
+        showLanguageSelectionDialog();
     }
 
     private void shareAgriDost() {

@@ -1,5 +1,6 @@
 package com.example.dummy.Autentication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,15 +12,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dummy.BaseActivity;
 import com.example.dummy.Main.MainActivity;
 import com.example.dummy.R;
 import com.example.dummy.FireBase.UserConn;
+import com.example.dummy.LocaleHelper;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends BaseActivity {
 
     private EditText nameInput, emailInput, passwordInput, confirmPasswordInput;
     private Button signupButton;
@@ -27,6 +29,11 @@ public class SignupActivity extends AppCompatActivity {
     private TextView loginText;
 
     private DatabaseReference dbRef;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

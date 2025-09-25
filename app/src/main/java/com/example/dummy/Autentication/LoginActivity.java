@@ -1,5 +1,6 @@
 package com.example.dummy.Autentication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,11 +13,12 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dummy.BaseActivity;
 import com.example.dummy.Main.MainActivity;
 import com.example.dummy.R;
 import com.example.dummy.FireBase.UserConn;
+import com.example.dummy.LocaleHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,13 +26,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 // Auth implemented using Firebase Realtime Database
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     private EditText emailInput;
     private EditText passwordInput;
     private Button loginButton;
     private ProgressBar progressBar;
     private TextView signupText;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +52,10 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress);
         signupText = findViewById(R.id.signup_text);
 
-        loginButton.setOnClickListener(v -> attemptLogin());
+        loginButton.setOnClickListener(v -> {
+            Toast.makeText(this, "Login button clicked!", Toast.LENGTH_SHORT).show();
+            attemptLogin();
+        });
         signupText.setOnClickListener(v -> startActivity(new Intent(this, SignupActivity.class)));
     }
 
@@ -63,6 +74,18 @@ public class LoginActivity extends AppCompatActivity {
 
         progressBar.setVisibility(View.VISIBLE);
         loginButton.setEnabled(false);
+
+        // Simple test login for debugging (remove this later)
+        if (email.equals("test@test.com") && password.equals("123456")) {
+            progressBar.setVisibility(View.GONE);
+            loginButton.setEnabled(true);
+            Toast.makeText(this, "Test login successful!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         // Query Firebase Realtime Database: Users by email, then verify password
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("Users");

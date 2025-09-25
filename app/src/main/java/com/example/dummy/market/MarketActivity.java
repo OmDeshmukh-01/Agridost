@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.dummy.BaseActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -19,7 +19,7 @@ import com.example.dummy.community.CommunityActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-public class MarketActivity extends AppCompatActivity {
+public class MarketActivity extends BaseActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
